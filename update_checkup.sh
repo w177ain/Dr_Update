@@ -4,7 +4,8 @@
 sudo apt-get update && sudo apt-get full-upgrade && sudo apt autoremove && sudo apt autoclean -y
 
 # Then scan through log files and report any new entries. 
-for file in /var/log/*.*; do
+LOG_DIR="${LOG_DIR:-/var/log}"
+for file in "$LOG_DIR"/*.*; do
     lastUpdate=$(stat -c '%Y' "$file")
     now=$(date +%s)
     if [ $((now - lastUpdate)) -gt 3600 ]; then
