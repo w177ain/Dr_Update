@@ -1,6 +1,6 @@
 #!/bin/bash
-
-# Check for system updates first, because priorities!
+# this is basically just a little script for updates and log checks. Toying around with this: 
+# and check for system updates first, because priorities!
 sudo apt-get update && sudo apt-get full-upgrade && sudo apt autoremove && sudo apt autoclean -y
 
 # Then scan through log files and report any new entries. 
